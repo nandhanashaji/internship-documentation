@@ -1,0 +1,48 @@
+# Day 2 - Firebase Hosting and Portfolio Website
+
+## Date
+03-06-2026
+
+## Duration
+7:00 PM – 8:30 PM
+
+## Topics Covered
+
+- Introduction to Firebase Hosting
+- Features of Firebase Hosting
+- Content Delivery Network (CDN)
+- SSL Certificates
+- Single Page Application Support
+- Portfolio Website Development
+- Visual Studio Code Live Server
+- Firebase Console Setup
+- Firebase CLI Installation
+- Firebase Login
+- Firebase Project Initialization
+- Local Testing
+- Website Deployment using Firebase Hosting
+
+## Activities Performed
+
+- Learned the basics of Firebase Hosting and its advantages.
+- Understood how CDN helps in delivering website content faster.
+- Learned about SSL certificates and website security.
+- Created a personal portfolio website using HTML.
+- Added personal details, skills, projects, and contact information to the portfolio.
+- Explored the Firebase Console and project creation process.
+- Learned the steps required to install and configure Firebase CLI.
+- Understood how to test a website locally before deployment.
+- Uploaded the portfolio website to GitHub.
+- Practiced Git commands for version control.
+
+## Learnings
+
+Today I learned about Firebase Hosting and how websites can be deployed on the internet. I understood the importance of CDN, SSL certificates, and cloud hosting services. I also created my own portfolio website and successfully uploaded it to GitHub. Through this session, I gained practical knowledge of GitHub repositories, website hosting concepts, and version control workflows.
+
+## Outcome
+
+- Created a portfolio website.
+- Uploaded the portfolio to GitHub.
+- Learned the basic workflow of Git and GitHub.
+- Understood the process of website deployment using Firebase Hosting.
+  
