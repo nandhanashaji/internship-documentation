@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nandhana Shaji | Data Science Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#081120;
+    --card:#0d1b2a;
+    --primary:#00bfff;
+    --secondary:#7b2ff7;
+    --text:#ffffff;
+    --gray:#b6c3d1;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:#7b2ff720;
+    border-radius:50%;
+    top:-100px;
+    right:-100px;
+    filter:blur(100px);
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:300px;
+    height:300px;
+    background:#00bfff20;
+    border-radius:50%;
+    bottom:-100px;
+    left:-100px;
+    filter:blur(100px);
+    z-index:-1;
+}
+
+.sidebar{
+    position:fixed;
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+    background:#11213d;
+    border-radius:50px;
+    padding:15px 0;
+    z-index:999;
+    box-shadow:0 0 25px rgba(0,191,255,.4);
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:14px 18px;
+    font-size:20px;
+}
+
+.sidebar a:hover{
+    color:var(--primary);
+}
+
+section{
+    padding:100px 10%;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.hero-text{
+    flex:1;
+    min-width:320px;
+}
+
+.hero-text h1{
+    font-size:4rem;
+    line-height:1.2;
+}
+
+.hero-text span{
+    color:var(--primary);
+}
+
+.hero-text h3{
+    margin-top:20px;
+    color:var(--gray);
+    font-weight:400;
+}
+
+.typing{
+    color:var(--primary);
+    font-weight:600;
+}
+
+.hero-text p{
+    margin-top:20px;
+    max-width:650px;
+    color:var(--gray);
+}
+
+.hero-img{
+    flex:1;
+    text-align:center;
+}
+
+.hero-img img{
+    width:320px;
+    height:320px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid var(--primary);
+    box-shadow:0 0 35px var(--primary);
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    margin-right:15px;
+    padding:14px 30px;
+    border-radius:40px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(45deg,var(--primary),var(--secondary));
+}
+
+.btn-outline{
+    border:2px solid var(--primary);
+    color:white;
+    background:transparent;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2.5rem;
+    color:var(--primary);
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    padding:25px;
+}
+
+.about p{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+    color:var(--gray);
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.skill-card{
+    background:var(--card);
+    border-radius:20px;
+    padding:25px;
+    transition:.4s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px rgba(0,191,255,.5);
+}
+
+.progress{
+    width:100%;
+    height:10px;
+    background:#203552;
+    border-radius:20px;
+    margin-top:10px;
+}
+
+.progress span{
+    display:block;
+    height:100%;
+    border-radius:20px;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.project{
+    background:var(--card);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.project:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px rgba(0,191,255,.4);
+}
+
+.project img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.project-content{
+    padding:20px;
+}
+
+.timeline{
+    max-width:800px;
+    margin:auto;
+}
+
+.timeline-item{
+    border-left:3px solid var(--primary);
+    padding-left:20px;
+    margin-bottom:30px;
+}
+
+.cert-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.cert{
+    text-align:center;
+    background:var(--card);
+    padding:25px;
+    border-radius:20px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+    padding:25px;
+    background:var(--card);
+    border-radius:20px;
+}
+
+.stat h2{
+    color:var(--primary);
+    font-size:2rem;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact a{
+    display:block;
+    color:var(--primary);
+    text-decoration:none;
+    margin:12px 0;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#06101d;
+    color:#9db0c4;
+}
+
+@media(max-width:768px){
+
+.sidebar{
+display:none;
+}
+
+.hero{
+text-align:center;
+}
+
+.hero-text h1{
+font-size:2.8rem;
+}
+
+.hero-img{
+margin-top:40px;
+}
+
+.hero-img img{
+width:250px;
+height:250px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+<a href="#home">🏠</a>
+<a href="#about">👤</a>
+<a href="#skills">💡</a>
+<a href="#projects">📁</a>
+<a href="#education">🎓</a>
+<a href="#contact">📧</a>
+</div>
+
+<section id="home" class="hero">
+
+<div class="hero-text">
+
+<h1>Hi, I'm <span>Nandhana Shaji</span></h1>
+
+<h3>
+<span class="typing"></span>
+</h3>
+
+<p>
+Data Science Engineering Student passionate about Python,
+Machine Learning, SQL, Data Analytics and Power BI.
+I enjoy building intelligent solutions and turning raw data
+into meaningful insights.
+</p>
+
+<div class="buttons">
+<a href="#projects" class="btn">View Projects</a>
+<a href="#" class="btn btn-outline">Download CV</a>
+</div>
+
+</div>
+
+<div class="hero-img">
+<img src="nandana.jpg" alt="Nandana.jpg">
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">About Me</h2>
+
+<div class="card about">
+<p>
+Currently pursuing B.Tech in Computer Science Engineering
+(Data Science). Interested in Machine Learning, Data Analysis,
+Python Programming and Business Intelligence.
+Actively seeking internships and opportunities to apply
+technical knowledge to real-world challenges.
+</p>
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="title">Technical Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>Python</h3>
+<div class="progress"><span style="width:90%"></span></div>
+</div>
+
+<div class="skill-card">
+<h3>SQL</h3>
+<div class="progress"><span style="width:85%"></span></div>
+</div>
+
+<div class="skill-card">
+<h3>Machine Learning</h3>
+<div class="progress"><span style="width:80%"></span></div>
+</div>
+
+<div class="skill-card">
+<h3>Power BI</h3>
+<div class="progress"><span style="width:75%"></span></div>
+</div>
+
+<div class="skill-card">
+<h3>Pandas & NumPy</h3>
+<div class="progress"><span style="width:85%"></span></div>
+</div>
+
+<div class="skill-card">
+<h3>HTML/CSS</h3>
+<div class="progress"><span style="width:70%"></span></div>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="title">Featured Projects</h2>
+
+<div class="projects-grid">
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" alt="">
+<div class="project-content">
+<h3>cybershield-QR Based url detection with risk score</h3>
+<p>Python, Pandas, Data Visualization</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" alt="">
+<div class="project-content">
+<h3>Power BI Dashboard</h3>
+<p>Interactive Business Analytics Dashboard</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" alt="">
+<div class="project-content">
+<h3>Machine Learning,data analysis</h3>
+<p>Classification & Prediction Model</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h2 class="title">Education Timeline</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>B.Tech Computer Science (Data Science)</h3>
+<p>St. Thomas College of Engineering & Technology</p>
+</div>
+
+<div class="timeline-item">
+<h3>Python Programming</h3>
+<p>Certification & Self Learning</p>
+</div>
+
+<div class="timeline-item">
+<h3>Machine Learning Fundamentals</h3>
+<p>Projects & Practical Applications</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Certifications</h2>
+
+<div class="cert-grid">
+
+<div class="cert">
+<h3>Python Programming</h3>
+</div>
+
+<div class="cert">
+<h3>NPTEL</h3>
+</div>
+
+<div class="cert">
+<h3>Machine Learning Basics</h3>
+</div>
+
+<div class="cert">
+<h3>Power BI Workshop</h3>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Achievements</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h2>3</h2>
+<p>Projects</p>
+</div>
+
+<div class="stat">
+<h2>5+</h2>
+<p>Certificates</p>
+</div>
+
+<div class="stat">
+<h2>3+</h2>
+<p>Technologies</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Learning Mindset</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2 class="title">Contact Me</h2>
+
+<a href="mailto:nandu5qc@gmail.com">
+📧 nandu5qc@gmail.com
+</a>
+
+<a href="#">
+📱 6282922917
+</a>
+
+<a href="https://github.com/nandhanashaji">
+GitHub Profile
+</a>
+
+<a href="https://www.linkedin.com/in/nandhanashaji">
+LinkedIn Profile
+</a>
+
+</section>
+
+<footer>
+
+<p>Designed & Developed by Nandhana Shaji</p>
+<p>Data Science Engineering Student</p>
+
+</footer>
+
+<script>
+
+const roles = [
+"Data Science Student",
+"Python Developer",
+"Machine Learning Enthusiast",
+"Power BI Learner",
+"Future Data Scientist"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+const typingElement = document.querySelector(".typing");
+
+function typeEffect(){
+
+if(charIndex < roles[roleIndex].length){
+
+typingElement.textContent += roles[roleIndex].charAt(charIndex);
+charIndex++;
+
+setTimeout(typeEffect,100);
+
+}else{
+
+setTimeout(eraseEffect,1500);
+
+}
+
+}
+
+function eraseEffect(){
+
+if(charIndex > 0){
+
+typingElement.textContent =
+roles[roleIndex].substring(0,charIndex-1);
+
+charIndex--;
+
+setTimeout(eraseEffect,50);
+
+}else{
+
+roleIndex++;
+
+if(roleIndex >= roles.length){
+roleIndex = 0;
+}
+
+setTimeout(typeEffect,500);
+
+}
+
+}
+
+typeEffect();
+
+</script>
+
+</body>
+</html>
